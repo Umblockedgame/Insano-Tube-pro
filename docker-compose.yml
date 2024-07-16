@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  python-app:
+    build:
+      context: .
+      dockerfile: Insano-Tube/Dockerfile.python
+    volumes:
+      - ./Insano-Tube:/app
+    ports:
+      - "5000:5000"
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
